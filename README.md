@@ -1,3 +1,3 @@
-# Alek
+﻿# Alek
 
-MobileSystem特論のTeam用Repositoryﾃﾞｽ
+MobileSystem特論のTeam用Repositoryﾃﾞｽyo
