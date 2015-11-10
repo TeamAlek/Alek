@@ -13,7 +13,7 @@ public class Logo : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-            Application.LoadLevel("TerminalScene");
+            CameraFade.StartAlphaFade(Color.white, false, 1f, 0f, () => { Application.LoadLevel("TerminalScene"); });
         }
     }
 

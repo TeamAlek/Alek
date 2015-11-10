@@ -2,11 +2,9 @@
 
 MobileSystem特論のTeam用Repositoryﾃﾞｽyo
 
-## 使用素材
+##フォント
 
-###フォント
+*http://itouhiro.hatenablog.com/entry/20130602/font
 
-*itouhiroはてなブログ
-http://itouhiro.hatenablog.com/entry/20130602/font
-
-*test
+##スクリプト
+*http://wiki.unity3d.com/index.php?title=FadeInOut#Source_.28CameraFade.cs.29
