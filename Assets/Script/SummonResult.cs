@@ -6,6 +6,7 @@ public class SummonResult : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         CameraFade.StartAlphaFade(Color.white, true, 1f, 1f);
+        makeItem();
     }
 	
 	// Update is called once per frame
@@ -14,5 +15,11 @@ public class SummonResult : MonoBehaviour {
         {
             CameraFade.StartAlphaFade(Color.white, false, 1f, 0f, () => { Application.LoadLevel("TerminalScene"); });
         }
+    }
+
+    void makeItem()
+    {
+        string a = WebCam.result_txt;
+        print(a);
     }
 }

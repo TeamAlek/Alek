@@ -17,5 +17,4 @@ public class Logo : MonoBehaviour {
             CameraFade.StartAlphaFade(Color.white, false, 1f, 0f, () => { Application.LoadLevel("TerminalScene"); });
         }
     }
-
 }

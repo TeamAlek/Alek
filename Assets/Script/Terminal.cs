@@ -7,7 +7,6 @@ public class Terminal : MonoBehaviour {
     GameObject character;
     GameObject statusText;
 
-    float theta = 0.1f;
     // Use this for initialization
     void Start () {
         character = GameObject.Find("Character");

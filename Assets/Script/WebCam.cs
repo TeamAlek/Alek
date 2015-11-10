@@ -25,8 +25,8 @@ public class WebCam : MonoBehaviour {
 
         screenRect = new Rect(0, 0, Screen.width, Screen.height);
         camTex = new WebCamTexture();
-        camTex.requestedHeight = Screen.width;
-        camTex.requestedWidth = Screen.height;
+        camTex.requestedHeight = 480;//Screen.width;
+        camTex.requestedWidth = 640; //Screen.height;
         camTex.Play();
     }
 	
@@ -53,6 +53,7 @@ public class WebCam : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.Q))
         {
             result_txt = "test_txt";
+            camTex.Stop();
             CameraFade.StartAlphaFade(Color.white, false, 1f, 0f, () => { Application.LoadLevel("SummonResultScene"); });
         }
     }
