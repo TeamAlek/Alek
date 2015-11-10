@@ -43,6 +43,11 @@ public class CameraFade : MonoBehaviour
     public float m_FadeDelay = 0;
     public Action m_OnFadeFinish = null;
 
+
+    public static Color def_newScreenOverlayColor = new Color(1,1,1,1);
+    public static float def_fadeDuration = 0.4f;
+    public static float def_fadeDelay = 0.0f;
+
     // Initialize the texture, background-style and initial color:
     public void init()
     {
@@ -111,6 +116,9 @@ public class CameraFade : MonoBehaviour
     /// </param>
     public static void StartAlphaFade(Color newScreenOverlayColor, bool isFadeIn, float fadeDuration)
     {
+        newScreenOverlayColor = def_newScreenOverlayColor;
+        fadeDuration = def_fadeDuration;
+        
         if (fadeDuration <= 0.0f)
         {
             SetScreenOverlayColor(newScreenOverlayColor);
@@ -146,6 +154,10 @@ public class CameraFade : MonoBehaviour
     /// </param>
     public static void StartAlphaFade(Color newScreenOverlayColor, bool isFadeIn, float fadeDuration, float fadeDelay)
     {
+        newScreenOverlayColor = def_newScreenOverlayColor;
+        fadeDuration = def_fadeDuration;
+        fadeDelay = def_fadeDelay;
+
         if (fadeDuration <= 0.0f)
         {
             SetScreenOverlayColor(newScreenOverlayColor);
@@ -184,8 +196,16 @@ public class CameraFade : MonoBehaviour
     /// <param name='OnFadeFinish'>
     /// On fade finish, doWork().
     /// </param>
+    /// 
+    
+    
+
     public static void StartAlphaFade(Color newScreenOverlayColor, bool isFadeIn, float fadeDuration, float fadeDelay, Action OnFadeFinish)
     {
+        newScreenOverlayColor = Color.white;
+        fadeDuration = 0.4f;
+        fadeDelay = 0.0f;
+
         if (fadeDuration <= 0.0f)
         {
             SetScreenOverlayColor(newScreenOverlayColor);

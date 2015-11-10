@@ -5,8 +5,6 @@ using System.IO;
 public class WebCam : MonoBehaviour {
 
     private const string URL = "http://133.19.61.106:40005";
-    private const int WIDTH = 640;
-    private const int HEIGHT = 480;
     private const int FPS = 30;
 
     private Rect screenRect;
@@ -14,6 +12,7 @@ public class WebCam : MonoBehaviour {
     public Texture2D texture;
     public Color32[] img;
 
+    public static string result_txt = null;
 
     void OnGUI()
     {
@@ -22,10 +21,12 @@ public class WebCam : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        CameraFade.StartAlphaFade(Color.white, true, 1f, 1f);
+
         screenRect = new Rect(0, 0, Screen.width, Screen.height);
         camTex = new WebCamTexture();
-        camTex.requestedHeight = WIDTH;
-        camTex.requestedWidth = HEIGHT;
+        camTex.requestedHeight = Screen.width;
+        camTex.requestedWidth = Screen.height;
         camTex.Play();
     }
 	
@@ -48,6 +49,12 @@ public class WebCam : MonoBehaviour {
 
             print("finish capture and send");
         }
+        //debug 
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            result_txt = "test_txt";
+            CameraFade.StartAlphaFade(Color.white, false, 1f, 0f, () => { Application.LoadLevel("SummonResultScene"); });
+        }
     }
 
     private IEnumerator accessToServer(byte[] send_bytes)
@@ -61,9 +68,15 @@ public class WebCam : MonoBehaviour {
         if (www.error == null)
         {
             if (www.text != "null")
+            {
                 print("string : " + www.text);
+                CameraFade.StartAlphaFade(Color.white, false, 1f, 0f, () => { Application.LoadLevel("SummonResultScene"); });
+                result_txt = www.text;
+            }
             else
+            {
                 print("QRcode not found");
+            }
         }
     }
 
