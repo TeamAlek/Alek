@@ -25,8 +25,8 @@ public class WebCam : MonoBehaviour {
 
         screenRect = new Rect(0, 0, Screen.width, Screen.height);
         camTex = new WebCamTexture();
-        camTex.requestedHeight = 480;//Screen.width;
-        camTex.requestedWidth = 640; //Screen.height;
+        camTex.requestedHeight = Screen.width;
+        camTex.requestedWidth = Screen.height;
         camTex.Play();
     }
 	
